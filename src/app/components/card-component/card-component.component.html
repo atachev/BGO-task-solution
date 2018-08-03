@@ -1,0 +1,18 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image">
+      <img src="../../../assets/images/avatar.png" alt="" class="avatar-img">
+    </div>
+    <mat-card-title>{{title}}</mat-card-title>
+    <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <img mat-card-image src={{image}} alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>{{description}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button color="primary" (click)="acceptItem($item)">Accept</button>
+    <button mat-flat-button color="accent" (click)="cancelItem($item)">Cancel</button>
+  </mat-card-actions>
+</mat-card>

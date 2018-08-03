@@ -1,0 +1,10 @@
+@media screen and (max-width: 990px) {
+    .card-container {
+        .__content {
+            flex-direction: column;
+            .card {
+                flex: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+<div class="details-container">
+  <div class="__content">
+      <mat-chip-list>
+        <mat-chip [ngClass]="{'positiveAcceptedCounter': acceptedItems > 0}">
+            accepted: <span class="counter">{{acceptedItems}}</span>
+        </mat-chip>
+        <mat-chip [ngClass]="{'positiveCanceledCounter': canceledItems > 0}">
+            canceled: <span class="counter">{{canceledItems}}</span>
+        </mat-chip>
+      </mat-chip-list>
+      <button mat-raised-button color="primary" (click)="resetItems()" class="reset-btn">Reset items</button>
+  </div>
+</div>
+<div class="card-container">
+  <div class="__content">
+    <div *ngFor="let card of cards" class="card">
+      <card-component
+        [title]="card.title"
+        [image]="card.image"
+        [subtitle]="card.subtitle"
+        [description]="card.description"
+        (acceptedItems)="acceptItem(card)"
+        (canceledItems)="cancelItem(card)">
+      </card-component>
+    </div>
+    <div *ngIf="cards.length === 0" class="no-available-cards"><i>No cards available</i></div>
+  </div>
+</div>
+
+<div class="card-items-warning" *ngIf="areAllItemsVisible">
+  <div class="__content">
+    <p>All items are already visible!</p>
+    <button mat-flat-button color="primary" (click)="closeModal()">Ok</button>
+  </div>
+</div>
